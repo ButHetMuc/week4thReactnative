@@ -14,21 +14,20 @@ export default function App() {
   const [number,setNumber] = useState(1);
   const [price,setPrice] = useState(14100);
   const staticPrice = 14100;
-  console.log(number);
   const onpressDecrease = ()=>{
     if(number>=2){
+      setPrice((number-1)*staticPrice); 
       setNumber(number-1);
     }else{
-      setNumber(1);   
+      setNumber(1);
+      setPrice(staticPrice);
     }
-    console.log(number);
-    setPrice(number*staticPrice); 
   }
   
   const onpressIncrease = ()=>{
+
+    setPrice((number+1)*staticPrice); 
     setNumber(number+1);
-    console.log(number);
-    setPrice(number* staticPrice);
   }
   return (
     <View style={styles.container}>
